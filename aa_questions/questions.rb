@@ -25,4 +25,23 @@ class Question
         @body = options['body']
         @user_id = options['user_id']
     end
+
+    def self.find_by_author_id(user_id)
+        user_data = QuestionsDBConnection.instance.execute(<<-SQL, @user_id)
+            SELECT
+                *
+            FROM
+                questions
+            WHERE
+                user_id = ?
+        SQL
+    end
+
+    def author
+        User.find_by_id(user_id)
+    end
+
+    def replies
+        Reply.find_by_question_id(id)
+    end
 end
