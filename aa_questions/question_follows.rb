@@ -54,4 +54,23 @@ class QuestionFollow
                 question_follows.user_id = ?
         SQL
     end
+
+    def self.most_followed_questions(n)
+        user_data = QuestionsDBConnection.instance.execute(<<-SQL, limit:n)
+            SELECT
+                questions.*
+            FROM
+                questions
+            JOIN
+                question_follows
+            ON
+                questions.id = question_follows.question_id
+            GROUP BY
+                questions.id
+            ORDER BY
+                COUNT(*) DESC
+            LIMIT
+                :limit
+        SQL
+    end
 end
