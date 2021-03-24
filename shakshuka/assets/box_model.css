@@ -98,8 +98,9 @@ section {
 
 aside {
   width: 180px;
-  display: inline-block; 
+  display: block; 
   margin-right: 15px;
+  float: left;
 }
 
 .ingredients-list li {
