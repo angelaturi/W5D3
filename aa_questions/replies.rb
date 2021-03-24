@@ -9,7 +9,7 @@ class Reply
     end
 
     def self.find_by_id(id)
-        user_data = QuestionsDBConnection.instance.execute(<<-SQL, @id)
+        user_data = QuestionsDBConnection.instance.execute(<<-SQL, id)
             SELECT
                 *
             FROM
@@ -28,7 +28,7 @@ class Reply
     end
 
     def self.find_by_user_id(user_id)
-        user_data = QuestionsDBConnection.instance.execute(<<-SQL, @user_id)
+        user_data = QuestionsDBConnection.instance.execute(<<-SQL, user_id)
             SELECT
                 *
             FROM
@@ -39,7 +39,7 @@ class Reply
     end
 
     def self.find_by_question_id(question_id)
-        user_data = QuestionsDBConnection.instance.execute(<<-SQL, @question_id)
+        user_data = QuestionsDBConnection.instance.execute(<<-SQL, question_id)
             SELECT
                 *
             FROM
@@ -50,7 +50,7 @@ class Reply
     end
 
     def self.find_by_parent_id(parent_reply_id)
-        user_data = QuestionsDBConnection.instance.execute(<<-SQL, @parent_reply_id)
+        user_data = QuestionsDBConnection.instance.execute(<<-SQL, parent_reply_id)
             SELECT
                 *
             FROM

@@ -9,7 +9,7 @@ class QuestionFollow
     end
 
     def self.find_by_id(id)
-        user_data = QuestionsDBConnection.instance.execute(<<-SQL, @id)
+        user_data = QuestionsDBConnection.instance.execute(<<-SQL, id)
             SELECT
                 *
             FROM

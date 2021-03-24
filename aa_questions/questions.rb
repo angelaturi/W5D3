@@ -9,7 +9,7 @@ class Question
     end
 
     def self.find_by_id(id)
-        user_data = QuestionsDBConnection.instance.execute(<<-SQL, @id)
+        user_data = QuestionsDBConnection.instance.execute(<<-SQL, id)
             SELECT
                 *
             FROM
@@ -27,7 +27,7 @@ class Question
     end
 
     def self.find_by_author_id(user_id)
-        user_data = QuestionsDBConnection.instance.execute(<<-SQL, @user_id)
+        user_data = QuestionsDBConnection.instance.execute(<<-SQL, user_id)
             SELECT
                 *
             FROM

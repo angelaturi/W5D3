@@ -73,7 +73,7 @@ INSERT INTO
     replies (question_id, parent_reply_id, user_id, body)
 VALUES 
     ((SELECT id FROM questions WHERE title = 'Angela''s Question'), NULL, (SELECT id FROM users WHERE fname = 'Angela' AND lname = 'Turi'), 'Ask the TAs for help'),
-    ((SELECT id FROM questions WHERE title = 'Daniel''s Question'), (SELECT id FROM replies WHERE body = 'Ask the TAs for help'), (SELECT id FROM users WHERE fname = 'Daniel' AND lname = 'Wu'), 'Ask the circle leader for help');
+    ((SELECT id FROM questions WHERE title = 'Daniel''s Question'), 1, (SELECT id FROM users WHERE fname = 'Daniel' AND lname = 'Wu'), 'Ask the circle leader for help');
 
 INSERT INTO 
     question_likes (user_id, question_id)
