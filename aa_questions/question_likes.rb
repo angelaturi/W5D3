@@ -1,4 +1,4 @@
-require_relative "questions_database"
+require_relative 'tables'
 
 class QuestionLike
     attr_accessor :id, :user_id, :question_id

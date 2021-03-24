@@ -1,5 +1,4 @@
-require_relative "questions_database"
-require_relative "question_follows"
+require_relative 'tables'
 
 class Question 
     attr_accessor :id, :title, :body, :user_id
