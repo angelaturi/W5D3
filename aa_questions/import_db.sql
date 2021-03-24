@@ -9,7 +9,7 @@ PRAGMA foreign_keys = ON;
 CREATE TABLE users (
     id INTEGER PRIMARY KEY,
     fname TEXT NOT NULL,
-    lname TEXT NOT NULL,
+    lname TEXT NOT NULL
 );
 
 CREATE TABLE questions (
@@ -46,10 +46,10 @@ CREATE TABLE replies (
 CREATE TABLE question_likes (
     id INTEGER PRIMARY KEY,
     user_id INTEGER NOT NULL,
-    question_id INTEGER NOT NULL
+    question_id INTEGER NOT NULL,
 
-    FOREIGN KEY(user_id) REFERENCES users(id),
-    FOREIGN KEY(question_id) REFERENCES questions(id)
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (question_id) REFERENCES questions(id)
 );
 
 INSERT INTO 
