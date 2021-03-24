@@ -24,7 +24,4 @@ class User
         @fname = options['fname']
         @lname = options['lname']
     end
-
-    
-
 end
